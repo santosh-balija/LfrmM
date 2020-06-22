@@ -30,29 +30,29 @@ const CarouselUI = ({ position, total, handleClick, children }) => (
   class CarouselApp extends Component{
      render (){
          return(
-                <Carousel>
+                <Carousel defaultWait={7000}>
                     <Slide right>
                         <div>
                             <p>
-                                <span style={{fontSize:'20px'}}>&#10077;</span> It's not that I'm so smart, 
-                                it's just that I stay with problems longer <span style={{fontSize:'20px'}}>&#10078;</span>
-                                <br></br>&#9998; Albert Einstein</p>
+                                <span style={{fontSize:'20px'}}>&#10077;</span><span style={{fontSize:'15px'}}> It's not that I'm so smart, 
+                                it's just that I stay with problems longer </span> <span style={{fontSize:'20px'}}>&#10078;</span>
+                                <br></br><span style={{fontSize:'15px'}}>&#64; Albert Einstein </span></p>
                         </div>
                     </Slide>
                     <Slide right>
                         <div>
                             <p>
-                                <span style={{fontSize:'20px'}}>&#10077;</span> Learn from the mistakes of others.
-                                 You can't live long enough to make them all yourself <span style={{fontSize:'20px'}}>&#10078;</span>
-                                <br></br>&#9998; Eleanor Roosevelt</p>
+                                <span style={{fontSize:'20px'}}>&#10077;</span><span style={{fontSize:'15px'}}> Learn from the mistakes of others.
+                                 You can't live long enough to make them all yourself </span><span style={{fontSize:'20px'}}>&#10078;</span>
+                                <br></br><span style={{fontSize:'15px'}}>&#64; Eleanor Roosevelt </span></p>
                         </div>
                     </Slide>
                     <Slide right>
                         <div>
                             <p>
-                                <span style={{fontSize:'20px'}}>&#10077;</span> It takes a wise man to learn from mistakes, but an even wiser man 
-                                to learn from others <span style={{fontSize:'20px'}}>&#10078;</span>
-                                <br></br>&#9998; Anonymous</p>
+                                <span style={{fontSize:'20px'}}>&#10077;</span><span style={{fontSize:'15px'}}> It takes a wise man to learn from mistakes, but an even wiser man 
+                                to learn from others </span><span style={{fontSize:'20px'}}>&#10078;</span>
+                                <br></br><span style={{fontSize:'15px'}}>&#64; Anonymous </span></p>
                         </div>
                     </Slide>
                 </Carousel>

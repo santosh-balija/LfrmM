@@ -25,16 +25,16 @@ const loginPage = () => (
                 <h1>
                     <span className={classes.greenFontTitle}>Learn </span>
                     <sub className={classes.yellowFont1}>f</sub>
-                    <span className={classes.yellowFont2}>rm </span>
-                    <span className={classes.redFont}>Mistakes</span>
+                    <span className={classes.yellowFontTitle}>rm </span>
+                    <span className={classes.redFontTitle}>Mistakes</span>
                 </h1>
-                <h2 style={{marginTop:'-29px'}}>
+                <h2 style={{marginTop:'-29px', color: '#2e3134'}}>
                     Oops!! It is <span className={classes.greenFont}>Learn </span>
-                                 <span className={classes.yellowFont2}>from </span>
+                                 <span className={classes.yellowFont2}>fro{/*<span className={classes.yellowFont2}>o </span> */}m </span>
                                  <span className={classes.redFont}>Mistakes</span>
-                    <p style={{color:'gray',fontWeight:'lighter',fontSize:'18px'}}>I made a mistake and corrected it. 
-                    Wanna Learn from your mistakes and from others mistakes??</p>
-                    <p style={{color:'#333'}}>STEP IN TO LEARN</p>
+                    <p style={{color:'#2e3134',fontWeight:'lighter',fontSize:'18px'}}>We made a mistake and corrected it. 
+                    Wanna Learn from others mistakes??</p>
+                    <p><span className={classes.yellowFont2}>STEP IN TO </span> <span className={classes.greenFont}>LEARN</span></p>
                 </h2>
             </div>
             <div className={classes.rightDiv2}>
