@@ -10,19 +10,25 @@ const RegisterPage = () => (
                 <span className={classes.greenFont}>Learn</span>
             </h2>
             <form>
-                <div className={classes.NamesDiv}>
-                    <input className={classes.Input} type="text" name="fname" placeholder="First Name" />    
-                    <input className={classes.Input} type="text" name="lname" placeholder="Last Name" />
+                <div className={classes.namesDiv}>
+                    <input className={classes.input} type="text" name="fname" placeholder="First Name" />    
+                    <input className={classes.input} type="text" name="lname" placeholder="Last Name" />
                 </div>
-                <div className={classes.EmailDiv}>
-                    <input className={classes.Input} type="email" name="email" placeholder="Email" />
-                    <input className={classes.Input} type="password" name="confirmPassword" placeholder="Re-Enter Password" />
+                <div className={classes.emailDiv}>
+                    <input className={classes.input} type="email" name="email" placeholder="Email" />
+                    <input className={classes.input} type="password" name="confirmPassword" placeholder="Re-Enter Password" />
                 </div>
                 <h2 style={{textAlign:'center'}}><span className={classes.yellowFont2}>Interests</span></h2>
-                <button className={classes.interestButton}>Coding1</button>
-                <button className={classes.interestButton}>Coding2</button>
-                <button className={classes.interestButton}>Coding3</button>
-                <button className={classes.interestButton}>Coding4</button>
+                <div className={classes.interestsDiv}>
+                    <button className={classes.interestButton}>Coding <span>&#10003;</span> </button>
+                    <button className={classes.interestButton}>Algorithms <span>&#10003;</span> </button>
+                    <button className={classes.interestButton}>Web Development <span>&#10003;</span> </button>
+                    <button className={classes.interestButton}>Machine Learning <span>&#10003;</span> </button>
+                    <button className={classes.interestButton}>Cyber Security <span>&#10003;</span> </button>
+                    <button className={classes.interestButton}>Cloud Computing <span>&#10003;</span> </button>
+                </div>   
+                <a className={classes.anchorTag}  href="#">&#8810; step back</a>   
+                <button className={classes.registerBtn} >Register</button>              
             </form>
             
         </div>
