@@ -9,7 +9,7 @@ import Routes from '../src/components/Login/Routes';
 
 ReactDOM.render(
     <Router>
-        <Routes />
+        <App />
     </Router>,document.getElementById('root')
     );
 registerServiceWorker();

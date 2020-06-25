@@ -1,0 +1,72 @@
+.header {
+    background-color: white;
+    height: 50px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.container {
+    width: 90%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.left {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 20%;
+    height: 1000px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.right {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 20%;
+    height: 1000px;
+    background: red;
+}
+
+.middle {
+    margin-left: 23%;
+    margin-right: 23%;
+    margin-top: 50px;
+    background:rgb(245, 240, 240);;
+}
+
+.sideMenu{
+    font-weight: bold;
+    padding: 2%;
+    text-decoration: none;
+    color: black;
+}
+
+.searchInput{
+    margin-left: 38%;
+    width: 20%;
+    position: absolute;
+    border-radius: 15px;
+    padding: 0.5%;
+    margin-top: 0.5%;
+}
+
+.logoutLink{
+    position:absolute;
+    margin-left:80%;
+    margin-top:0.5%;
+}
+
+.postLearning{
+    border: 3px solid rgb(244, 166, 13);
+    width: 95%;
+    margin: auto;
+    height: 60px;
+    text-align: center;
+    background-color:white;
+}
