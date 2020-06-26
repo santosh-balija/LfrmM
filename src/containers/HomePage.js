@@ -29,48 +29,58 @@ class HomePage extends Component {
     render(){
         return(
             <Auxillary>
-                <div className={classes.header}>
-                    <img 
-                        src={LfrmMImg} 
-                        alt="LfrmM Logo" 
-                        style={{position:'absolute'}} />
-                    <input className={classes.searchInput} type="text" name="searchInp" placeholder="Search..." />   
-                    <a className={classes.logoutLink}>Logout</a> 
-                    <div className={classes.container}>
-                        <div className={classes.left}>
-                            <a 
-                                className={classes.sideMenu} 
-                                href="#" 
-                                id="menu_1" 
-                                style={{color:'green'}}
-                                onClick={this.menuItemClickHandler.bind(this)}>Home</a>
-                            <a 
-                                className={classes.sideMenu} 
-                                href="#" 
-                                id="menu_2" 
-                                onClick={this.menuItemClickHandler.bind(this)}>Notifications</a>
-                            <a 
-                                className={classes.sideMenu} 
-                                href="#" 
-                                id="menu_3"
-                                onClick={this.menuItemClickHandler.bind(this)} >Saved</a>
-                            <a 
-                                className={classes.sideMenu} 
-                                href="#" 
-                                id="menu_4"
-                                onClick={this.menuItemClickHandler.bind(this)} >Profile</a>
-                            <a 
-                                className={classes.sideMenu} 
-                                href="#" 
-                                id="menu_5"
-                                onClick={this.menuItemClickHandler.bind(this)} >Messages</a>
+                <div className={classes.body}>
+                    <div className={classes.header}>
+                        <img 
+                            src={LfrmMImg} 
+                            alt="LfrmM Logo" 
+                            style={{position:'absolute'}} />
+                        <input className={classes.searchInput} type="text" name="searchInp" placeholder="Search..." />   
+                        <a className={classes.logoutLink}>Logout</a> 
+                        <div className={classes.container}>
+                            <div className={classes.left}>
+                                <a 
+                                    className={classes.sideMenu} 
+                                    href="#" 
+                                    id="menu_1" 
+                                    style={{color:'green'}}
+                                    onClick={this.menuItemClickHandler.bind(this)}>Home</a>
+                                <a 
+                                    className={classes.sideMenu} 
+                                    href="#" 
+                                    id="menu_2" 
+                                    onClick={this.menuItemClickHandler.bind(this)}>Notifications</a>
+                                <a 
+                                    className={classes.sideMenu} 
+                                    href="#" 
+                                    id="menu_3"
+                                    onClick={this.menuItemClickHandler.bind(this)} >Saved</a>
+                                <a 
+                                    className={classes.sideMenu} 
+                                    href="#" 
+                                    id="menu_4"
+                                    onClick={this.menuItemClickHandler.bind(this)} >Profile</a>
+                                <a 
+                                    className={classes.sideMenu} 
+                                    href="#" 
+                                    id="menu_5"
+                                    onClick={this.menuItemClickHandler.bind(this)} >Messages</a>
+                            </div>
+                            <div className={classes.right}></div>
                         </div>
-                        <div className={classes.right}></div>
                     </div>
-                </div>
-                <div className={classes.middle}>
-                    <div className={classes.postLearning}>
-                        <h3 style={{color:'gray'}}>Want to share your Learning!!</h3>
+                    <div className={classes.middle}>
+                        <div className={classes.postLearning}>
+                            <h3 style={{color:'gray'}}>Want to share your Learning!!</h3>
+                        </div>
+                        sdf<br></br>
+                            sdf<br></br>
+                            sdf<br></br>
+                            sdf<br></br>
+                            sdf<br></br>
+                            sdf<br></br>
+                            sdf<br></br>
+                            sdf<br></br>
                     </div>
                 </div>
             </Auxillary>
