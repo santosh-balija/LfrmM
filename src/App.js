@@ -11,7 +11,7 @@ class App extends Component {
     return (
         <div>
           <Layout>
-            <PostModal/>
+            <HomePage/>
           </Layout>
         </div>
     );

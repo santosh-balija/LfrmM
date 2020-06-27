@@ -3,11 +3,14 @@ import Auxillary from '../hoc/Auxillary';
 import classes from './HomePage.css';
 import LfrmMImg from '../assets/images/LfrmM.png';
 import PostModal from './PostModal';
+import Modal from '../components/UI/Modal';
+
 
 class HomePage extends Component {
 
     state={
-        highlightedMenuId : 'menu_1'
+        highlightedMenuId : 'menu_1',
+        postingNewPost: false
     }
 
     menuItemClickHandler = (event) => {
@@ -26,7 +29,20 @@ class HomePage extends Component {
         }
     };
 
+    postingCancelHandler = () => {
+        this.setState({postingNewPost:false});
+    }
+    postingHandler = () => {
+        this.setState({postingNewPost:true});
+    }
+
     render(){
+        var modal=null;
+        console.log(this.state.postingNewPost);
+        if(this.state.postingNewPost){
+            modal=<PostModal postingPost={this.state.postingNewPost}/>
+        }
+
         return(
             <Auxillary>
                 <div className={classes.body}>
@@ -72,12 +88,9 @@ class HomePage extends Component {
                     <div className={classes.middle}>
                         <div className={classes.postLearning}>
                             <h3 style={{color:'gray'}}>Want to share your Learning!!</h3>
+                            <button onClick={this.postingHandler}>New Post</button>
+                            {modal}
                         </div>
-                        sdf<br></br>
-                            sdf<br></br>
-                            sdf<br></br>
-                            sdf<br></br>
-                            sdf<br></br>
                             sdf<br></br>
                             sdf<br></br>
                             sdf<br></br>
