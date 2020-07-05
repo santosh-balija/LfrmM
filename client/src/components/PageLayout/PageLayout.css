@@ -1,0 +1,68 @@
+body {
+  background: #f8f9fa;
+}
+
+.header {
+  background-color: white;
+  height: 50px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.searchInput {
+  margin-left: 38%;
+  width: 20%;
+  position: absolute;
+  border-radius: 15px;
+  padding: 0.5%;
+  margin-top: 0.5%;
+}
+
+.logoutLink {
+  position: absolute;
+  margin-left: 80%;
+  margin-top: 0.5%;
+}
+
+.container {
+  width: 90%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.left {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 20%;
+  height: 1000px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #eee;
+}
+
+.sideMenu {
+  font-weight: bold;
+  padding: 2%;
+  text-decoration: none;
+}
+
+.right {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 28%;
+  height: 1000px;
+  background: white;
+  border: 1px solid #eee;
+}
+
+.middle {
+  margin-left: 23%;
+  margin-right: 30%;
+  margin-top: 50px;
+  background: #f8f9fa;
+}

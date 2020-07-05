@@ -1,0 +1,119 @@
+.postContainer {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  border: 1px solid black;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: auto;
+  height: auto;
+  background-color: #ffffff;
+}
+
+.greenFont {
+  color: rgb(60, 154, 84);
+}
+
+.yellowFont2 {
+  color: rgb(244, 157, 13);
+}
+
+.redFont {
+  color: rgb(219, 29, 54);
+}
+
+.horizontalLine {
+  border: 0.1px groove rgb(60, 154, 84);
+  margin: 0px;
+}
+
+.textareaMistakes {
+  outline: none;
+  border: none;
+  background-color: white;
+  color: #2e3134;
+  font-family: 'Open Sans';
+}
+
+.textareaLearnings {
+  outline: none;
+  border: none;
+  background-color: white;
+  color: #2e3134;
+  font-family: 'Open Sans';
+}
+
+.postBtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 10px;
+  border: none;
+  cursor: pointer;
+  width: 15%;
+  margin: auto;
+  margin-top: 8px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  float: right;
+  margin-right: 2%;
+  margin-bottom: 1%;
+}
+
+.postBtn:hover {
+  opacity: 0.8;
+}
+
+::placeholder {
+  color: gray;
+  opacity: 1;
+  font-size: 14px;
+}
+
+:-ms-input-placeholder {
+  color: gray;
+  opacity: 1;
+  font-size: 14px;
+}
+
+::-ms-input-placeholder {
+  color: gray;
+  opacity: 1;
+  font-size: 14px;
+}
+
+[contenteditable='true']:empty:before {
+  content: attr(placeholder);
+  pointer-events: none;
+  display: block;
+  color: gray;
+}
+
+.contentDiv {
+  height: auto;
+  border: none;
+  outline: none;
+  text-align: left;
+  color: #2e3134;
+  font-family: 'Open Sans';
+  min-height: 100px;
+}
+
+.closeModalBtn {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #ccc;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.closeModalBtn:hover,
+.closeModalBtn:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -1,0 +1,31 @@
+.interestButton {
+  background-color: transparent;
+  padding: 1%;
+  margin: 2%;
+  border: 1px solid rgb(60, 154, 84);
+  color: rgb(60, 154, 84);
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 0px;
+}
+
+.interestButton:hover {
+  background-color: rgb(60, 154, 84);
+  color: white;
+}
+
+.interestButton_Selected {
+  background-color: rgb(60, 154, 84);
+  padding: 1%;
+  margin: 2%;
+  border: 1px solid rgb(60, 154, 84);
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 0px;
+}
+
+.interestButton_Selected:hover {
+  background-color: rgb(60, 154, 84);
+  color: white;
+}

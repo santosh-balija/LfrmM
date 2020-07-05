@@ -1,0 +1,51 @@
+.postLearning {
+  border: 1px solid #eee;
+  width: 95%;
+  margin: auto;
+  background-color: white;
+  min-height: 100px;
+}
+
+.profileDetails {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.profileImage {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.contentDiv {
+  height: auto;
+  border: none;
+  outline: none;
+  text-align: left;
+  color: #2e3134;
+  font-family: 'Open Sans';
+  margin-top: 8px;
+}
+
+.postBtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 10px;
+  border: none;
+  cursor: pointer;
+  width: 15%;
+  margin: auto;
+  margin-top: 8px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-left: 80%;
+  margin-bottom: 1%;
+}
+
+.postBtn:hover {
+  opacity: 0.8;
+}

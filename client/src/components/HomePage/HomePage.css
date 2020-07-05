@@ -1,0 +1,144 @@
+.postBtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 10px;
+  border: none;
+  cursor: pointer;
+  width: 15%;
+  margin: auto;
+  margin-top: 8px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-left: 80%;
+  margin-bottom: 1%;
+}
+
+.postBtn:hover {
+  opacity: 0.8;
+}
+
+[contenteditable='true']:empty:before {
+  content: attr(placeholder);
+  pointer-events: none;
+  display: block;
+  color: gray;
+}
+
+.greenFont {
+  color: rgb(60, 154, 84);
+}
+
+.yellowFont2 {
+  color: rgb(244, 157, 13);
+}
+
+.redFont {
+  color: rgb(219, 29, 54);
+}
+
+.profileImage {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.clear {
+  clear: both;
+}
+
+.contentDiv {
+  height: auto;
+  border: none;
+  outline: none;
+  text-align: left;
+  color: #2e3134;
+  font-family: 'Open Sans';
+  margin-top: 8px;
+}
+
+.postBtn:disabled {
+  background-color: #4caf50;
+  border: 1px solid #4caf50;
+  color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.postReactionsDiv {
+  margin-top: 0%;
+}
+
+.postReactionsCountDiv {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  position: relative;
+  background: #fff;
+  margin-top: 10px;
+}
+
+.postReactionsCount {
+  padding: 1%;
+  color: gray;
+  font-size: 13px;
+}
+
+.postReactionsBtns {
+  background: none;
+  border: none;
+  margin-bottom: 1%;
+  font-size: 13px;
+  color: gray;
+}
+
+.reportPostBtn {
+  float: right;
+  background: none;
+  border: none;
+  margin-bottom: 1%;
+  font-size: 13px;
+  color: gray;
+}
+
+.reportPostBtn {
+  float: right;
+  font-size: 13px;
+  background-color: transparent;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: 12px;
+  border: 1px solid rgb(60, 154, 84);
+  color: rgb(60, 154, 84);
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.dropdownContent {
+  position: fixed;
+  margin-top: 20px;
+  display: none;
+  background-color: #ffffff;
+  z-index: 500;
+  border: 1px solid #eee;
+}
+
+.dropdownContent a {
+  color: #2e3134;
+  padding: 5px 5px;
+  text-decoration: none;
+  display: block;
+  z-index: 600;
+}
+
+.dropdownContent a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdownContent {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}

@@ -1,0 +1,79 @@
+.registerDiv {
+  width: 40vw;
+  height: 60vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.namesDiv {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* .namesDiv .input {
+  flex-basis: 100%;
+} */
+/* .namesDiv .input:nth-of-type(3),
+.namesDiv .input:nth-of-type(4) {
+  flex-basis: 50%;
+} */
+
+.emailDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+.greenFont {
+  color: rgb(60, 154, 84);
+}
+
+.yellowFont2 {
+  color: rgb(244, 157, 13);
+}
+
+.interestsDiv {
+  margin-left: 3%;
+}
+
+.registerBtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+  margin: auto;
+  margin-top: 8px;
+  border-radius: 5px;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 14px;
+  float: right;
+  margin-right: 6%;
+}
+
+.registerBtn:hover {
+  opacity: 0.8;
+}
+
+.anchorTag {
+  float: left;
+  color: rgb(244, 157, 13);
+  margin-left: 45%;
+  margin-top: 5%;
+  font-size: 15px;
+}
+.error {
+  text-decoration: none;
+  font-size: 12px;
+  display: flex;
+  margin-left: 140px;
+  margin-top: -7px;
+  margin-bottom: 15px;
+  color: rgb(253, 1, 35);
+}
+
+.error:hover {
+  color: rgb(253, 1, 35);
+}
