@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Validate from '../Validation/Validation';
+import { useAuth } from './../components/Context/Auth';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 const useTextInput = (redirectToRegister, redirectToHome) => {
+  const { setCookie } = useAuth();
   // State of the LoginPage Component
   const [state, setstate] = useState({
     email: {
@@ -100,7 +103,8 @@ const useTextInput = (redirectToRegister, redirectToHome) => {
           redirectToRegister();
         } else if (res.password) {
         } else {
-          // console.log(res.data.name);
+          const cookie = Cookies.get('Lfrm-jwt-token');
+          setCookie(cookie);
           redirectToHome(res.data.name);
         }
       }

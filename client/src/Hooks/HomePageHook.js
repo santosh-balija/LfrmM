@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-const useHomePage = (redirectToSelectedMenu) => {
+const useHomePage = (name) => {
   const [state, setState] = useState({
+    name: name,
     showPostModal: false,
   });
   const togglePostModal = () => {

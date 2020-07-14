@@ -2,14 +2,13 @@ const express = require('express');
 const app = express();
 const mongoose = require('./db/mongoose');
 const bodyParser = require('body-parser');
-var cors = require('cors');
 var morgan = require('morgan');
+var cookieParser = require('cookie-parser');
 
 // const interests = require('./models/Interests/interests');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(morgan('dev'));
-app.use(cors());
+app.use(cookieParser());
 
 const loginRouter = require('./routes/login');
 const registerRouter = require('./routes/register');

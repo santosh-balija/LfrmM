@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const router = new express.Router();
 const { User } = require('./../models/users');
 const jwt = require('jsonwebtoken');
+const authentication = require('./../middleware/authentication');
 
 router.post('/', async (req, res) => {
   console.log(req.body);
@@ -21,7 +22,7 @@ router.post('/', async (req, res) => {
   // Send the JSW token
   const token = user.generateAuthToken();
   res
-    .cookie('Lfrm-jwt-token', token, { httpOnly: true, maxAge: 1000000 })
+    .cookie('Lfrm-jwt-token', token, { httpOnly: false, maxAge: 50000 })
     .send({ name: user.fname })
     .redirect('/');
 });

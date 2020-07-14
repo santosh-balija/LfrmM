@@ -5,10 +5,19 @@ import PageLayout from './../PageLayout/PageLayout';
 import useHomePage from './../../Hooks/HomePageHook';
 import NewPost from './NewPost/NewPost';
 import Post from './Post/Post';
+import { useAuth } from './../Context/Auth';
+import Cookies from 'js-cookie';
 
 const homePage = (props) => {
-  const { state, togglePostModal } = useHomePage();
+  let name = localStorage.getItem('user_name');
+  if (props.location.name) {
+    name = props.location.name;
+    localStorage.setItem('user_name', name);
+  }
+  const { state, togglePostModal } = useHomePage(name);
   console.log(state);
+  const existingTokens = useAuth();
+
   return (
     <Auxillary>
       <PageLayout {...props}>
@@ -16,9 +25,9 @@ const homePage = (props) => {
           <NewPost
             showPostModal={state.showPostModal}
             togglePostModal={togglePostModal}
-            name={props.location.name}
+            name={state.name}
           />
-          <Post name={props.location.name} />
+          <Post name={state.name} />
         </div>
       </PageLayout>
     </Auxillary>
