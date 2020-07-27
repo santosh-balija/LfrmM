@@ -87,7 +87,7 @@ const useTextInput = (redirectToRegister, redirectToHome) => {
   // Function to handle the form submit event
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log('Button CLicked');
+    // console.log('Button CLicked');
     // Data to be sent to the backend to check for the user
     var data = {
       email: state.email.value,

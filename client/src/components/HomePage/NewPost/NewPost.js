@@ -1,18 +1,13 @@
 import React from 'react';
 import classes from './NewPost.css';
 import PostModal from '../PostModal/PostModal';
-import defaultProfilePic from './../../../assets/images/defaultProfilePic.png';
+import ProfileDetails from '../ProfileDetails/ProfileDetails';
 
 const newPost = (props) => {
   return (
     <div>
       <div className={classes.postLearning} onClick={props.togglePostModal}>
-        <div className={classes.profileDetails}>
-          <img src={defaultProfilePic} className={classes.profileImage} />
-          <span style={{ marginLeft: '10px', marginTop: '16px' }}>
-            {props.name}
-          </span>
-        </div>
+        <ProfileDetails name={props.name} />
         <div
           className={classes.contentDiv}
           id='editable'

@@ -8,6 +8,7 @@ import HomePage from './../HomePage/HomePage';
 import usePageLayout from './../../Hooks/PageLayoutHook';
 
 const pageLayout = (props) => {
+  console.log('PageLayout Rendered');
   const redirectToSelectedMenu = (menu) => {
     props.history.push({ pathname: `${menu}` });
   };

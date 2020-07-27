@@ -1,22 +1,26 @@
 import React, { useRef, useEffect } from 'react';
 import classes from './PostModal.css';
 import Modal from '../../UI/Modal/Modal';
+import ContentEditable from 'react-contenteditable';
+
+import usePostModal from '../../../Hooks/PostModalHook';
 
 const postModal = (props) => {
-  const mistakeRef = useRef();
-  useEffect(() => {
-    mistakeRef.current.focus();
-  });
+  const redirectToHome = () => {
+    props.closePostModal();
+  };
+  const {
+    mistake,
+    learning,
+    mistakeChangeHandler,
+    learningChangeHandler,
+    newPostSubmitHandler,
+    mistakeRef,
+  } = usePostModal(redirectToHome);
+
   return (
     <Modal show={props.showPostModal}>
-      <h2
-        style={{
-          borderBottom: '1px solid rgba(0,0,0,0.15)',
-          paddingBottom: '10px',
-          margin: '0px',
-          paddingTop: '10px',
-        }}
-      >
+      <h2 className={classes.heading}>
         <span className={classes.yellowFont2}>Post </span>
         <span className={classes.greenFont}>Learning</span>
       </h2>
@@ -24,42 +28,30 @@ const postModal = (props) => {
         &times;
       </span>
       <div>
-        <h4
-          style={{
-            marginTop: '15px',
-            marginBottom: '3px',
-            textAlign: 'left',
-            paddingLeft: '10px',
-          }}
-        >
+        <h4 className={classes.mistake}>
           <span className={classes.redFont}>#Mistake</span>
         </h4>
-        <div
+        <ContentEditable
           className={classes.contentDiv}
-          ref={mistakeRef}
-          contentEditable='true'
+          innerRef={mistakeRef}
+          html={mistake.current}
+          onChange={mistakeChangeHandler}
           placeholder='Express your misunderstanding if any, else post your learning below.'
           style={{ paddingLeft: '10px' }}
-        ></div>
+        />
         <div className={classes.attachments}></div>
       </div>
       <div>
-        <h4
-          style={{
-            marginTop: '15px',
-            marginBottom: '3px',
-            textAlign: 'left',
-            paddingLeft: '10px',
-          }}
-        >
+        <h4 className={classes.learnig}>
           <span className={classes.greenFont}>#Learning</span>
         </h4>
-        <div
+        <ContentEditable
           className={classes.contentDiv}
-          contentEditable='true'
+          html={learning.current}
           placeholder="Hurray... I learned this new thing and hope it helps y'all. "
+          onChange={learningChangeHandler}
           style={{ paddingLeft: '10px' }}
-        ></div>
+        />
         <div className={classes.attachments}></div>
       </div>
       <div>
@@ -73,7 +65,9 @@ const postModal = (props) => {
         <label style={{ color: 'gray', fontSize: '13px' }}>
           Post as Anonymous
         </label>
-        <button className={classes.postBtn}>Post</button>
+        <button onClick={newPostSubmitHandler} className={classes.postBtn}>
+          Post
+        </button>
       </div>
     </Modal>
   );

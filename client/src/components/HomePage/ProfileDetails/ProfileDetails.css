@@ -1,0 +1,12 @@
+.profileDetails {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+.profileImage {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  margin-top: 10px;
+  margin-left: 10px;
+}

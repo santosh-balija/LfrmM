@@ -20,7 +20,7 @@ const loginPage = (props) => {
   };
   // Function which is called if the user is already registered
   const redirectToHome = (name) => {
-    console.log('Home Page rendered');
+    console.log('Pushing Home Page on the stack');
     props.history.push({
       pathname: '/home',
       name: name,
@@ -30,7 +30,7 @@ const loginPage = (props) => {
     redirectToRegister,
     redirectToHome
   );
-  console.log(state);
+  // console.log(state);
   return (
     <Auxillary>
       <div className={classes.container1}>

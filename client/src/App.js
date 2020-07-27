@@ -19,6 +19,7 @@ class App extends Component {
       const currentCookie = Cookies.set('Lfrm-jwt-token', token);
       this.setState({ existingCookie: currentCookie });
     };
+    // console.log(this.state.existingCookie);
     return (
       <div>
         <Layout>

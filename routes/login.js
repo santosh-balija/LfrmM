@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
   // Send the JSW token
   const token = user.generateAuthToken();
   res
-    .cookie('Lfrm-jwt-token', token, { httpOnly: false, maxAge: 50000 })
+    .cookie('Lfrm-jwt-token', token, { httpOnly: false, maxAge: 5000 })
     .send({ name: user.fname })
     .redirect('/');
 });

@@ -7,7 +7,7 @@
   margin-top: 3%;
 }
 
-.savePostBtn {
+/* .savePostBtn {
   float: right;
   font-size: 13px;
   background-color: transparent;
@@ -19,21 +19,21 @@
   cursor: pointer;
   border-radius: 15px;
   margin-top: 1%;
-}
+} */
 
-.savePostBtn:hover {
+/* .savePostBtn:hover {
   background-color: rgb(60, 154, 84);
   color: white;
-}
+} */
 
-.dropdown {
+/* .dropdown {
   position: relative;
   float: right;
   margin-top: 1%;
   z-index: 100;
-}
+} */
 
-.dropdownContent {
+/* .dropdownContent {
   position: fixed;
   margin-top: 20px;
   display: none;
@@ -56,12 +56,12 @@
 
 .dropdown:hover .dropdownContent {
   display: block;
-}
+} */
 
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
 }
-.reportPostBtn {
+/* .reportPostBtn {
   float: right;
   font-size: 13px;
   background-color: transparent;
@@ -72,7 +72,7 @@
   color: rgb(60, 154, 84);
   cursor: pointer;
   border-radius: 15px;
-}
+} */
 /* .reportPostBtn {
   float: right;
   background: none;
@@ -96,12 +96,12 @@
 .redFont {
   color: rgb(219, 29, 54);
 }
-.heading {
+/* .heading {
   margin-top: '15px';
   margin-bottom: '3px';
   text-align: 'left';
   padding-left: '10px';
-}
+} */
 .greenFont {
   color: rgb(60, 154, 84);
 }

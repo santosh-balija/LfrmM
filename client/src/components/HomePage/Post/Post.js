@@ -1,6 +1,10 @@
 import React from 'react';
 import classes from './Post.css';
 import Auxiliary from './../../../hoc/Auxillary';
+import SaveButton from './SavedPost/SavePost';
+import Report from './Report/Report';
+import ProfileDetails from '../ProfileDetails/ProfileDetails';
+import Mistake from './Mistake/Mistake';
 import defaultProfilePic from '../../../assets/images/defaultProfilePic.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -16,115 +20,10 @@ const post = (props) => {
         <span style={{ float: 'right', color: 'green', fontSize: '20px' }}>
           &#10003;
         </span>
-        {/* Save Button */}
-        <button
-          className={classes.savePostBtn}
-          value='1'
-          id='savePost_Btn'
-          // onClick={this.saveBtnHandler.bind(this)}
-        >
-          Save
-        </button>
-        {/* DropDown */}
-        <div className={classes.dropdown}>
-          <button className={classes.reportPostBtn}>Report</button>
-          <div className={classes.dropdownContent}>
-            <a href='#'>
-              <h5
-                style={{
-                  paddingBottom: '-10px',
-                  marginBottom: '-20px',
-                  marginTop: '0px',
-                }}
-              >
-                Block this post
-              </h5>
-              <h6
-                style={{
-                  marginBottom: '-5px',
-                  marginTop: '17px',
-                  fontWeight: 'lighter',
-                  color: 'gray',
-                }}
-              >
-                This post is offensive
-              </h6>
-            </a>
-            <a href='#'>
-              <h5
-                style={{
-                  paddingBottom: '-10px',
-                  marginBottom: '-20px',
-                  marginTop: '0px',
-                }}
-              >
-                Irrelevant post
-              </h5>
-              <h6
-                style={{
-                  marginBottom: '-5px',
-                  marginTop: '17px',
-                  fontWeight: 'lighter',
-                  color: 'gray',
-                }}
-              >
-                Not relevant to this community
-              </h6>
-            </a>
-            <a href='#'>
-              <h5
-                style={{
-                  paddingBottom: '-10px',
-                  marginBottom: '-20px',
-                  marginTop: '0px',
-                }}
-              >
-                Hide post
-              </h5>
-              <h6
-                style={{
-                  marginBottom: '0px',
-                  marginTop: '17px',
-                  fontWeight: 'lighter',
-                  color: 'gray',
-                }}
-              >
-                I don't want to see this post
-              </h6>
-            </a>
-          </div>
-        </div>
-        {/* Profile Details */}
-        <div className={classes.profileDetails}>
-          <img src={defaultProfilePic} className={classes.profileImage} />
-          <span
-            style={{
-              marginLeft: '10px',
-              marginTop: '16px',
-              display: 'inline',
-            }}
-          >
-            {props.name}
-          </span>
-        </div>
-        {/* Mistake Div */}
-        <div>
-          <h4
-            className={classes.heading}
-            // style={{
-            //   marginTop: '15px',
-            //   marginBottom: '3px',
-            //   textAlign: 'left',
-            //   paddingLeft: '10px',
-            // }}
-          >
-            <span className={classes.redFont}>#Mistake</span>
-          </h4>
-          <label style={{ paddingLeft: '10px' }}>
-            This is my Mistake. Hope you do not make it as I did, as it screwed
-            me.
-          </label>
-        </div>
+        <SaveButton />
+        <Report />
+        <ProfileDetails name={props.name} />
+        <Mistake />
         {/* Learning Div */}
         <div>
           <h4 className={classes.heading}>
