@@ -1,0 +1,12 @@
+.heading {
+  margin-top: '15px';
+  margin-bottom: '3px';
+  text-align: 'left';
+  padding-left: '10px';
+}
+.redFont {
+  color: rgb(219, 29, 54);
+}
+.greenFont {
+  color: rgb(60, 154, 84);
+}

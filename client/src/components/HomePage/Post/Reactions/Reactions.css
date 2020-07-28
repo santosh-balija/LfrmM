@@ -1,0 +1,11 @@
+.postReactionsDiv {
+  margin-top: 0%;
+}
+
+.postReactionsBtns {
+  background: none;
+  border: none;
+  margin-bottom: 1%;
+  font-size: 13px;
+  color: gray;
+}

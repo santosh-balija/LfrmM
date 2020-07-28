@@ -7,11 +7,19 @@ const useHomePage = (name) => {
     showPostModal: false,
   });
   const [posts, setPosts] = useState([]);
-  useEffect(async () => {
-    try {
-      const posts = await axios.get('/getPosts');
-    } catch (e) {}
-  });
+  useEffect(() => {
+    console.log('useEffect in HomePage');
+    async function getPosts() {
+      try {
+        const posts = await axios.get('/getPosts');
+        setPosts(posts.data.posts);
+        // console.log(posts.data.posts);
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    getPosts();
+  }, []);
   const togglePostModal = () => {
     const prev = { ...state };
     const prevModalState = prev.showPostModal;
@@ -22,7 +30,7 @@ const useHomePage = (name) => {
     }));
     console.log(state);
   };
-  return { state, togglePostModal };
+  return { state, togglePostModal, posts };
 };
 
 export default useHomePage;

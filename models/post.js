@@ -12,6 +12,18 @@ const PostSchema = new mongoose.Schema({
   learning: {
     type: String,
   },
+  Learned: {
+    type: Number,
+    default: 0,
+  },
+  Appreciate: {
+    type: Number,
+    default: 0,
+  },
+  Share: {
+    type: Number,
+    default: 0,
+  },
 });
 
 const Post = mongoose.model('Post', PostSchema);

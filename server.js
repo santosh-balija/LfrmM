@@ -13,6 +13,7 @@ app.use(cookieParser());
 const loginRouter = require('./routes/login');
 const registerRouter = require('./routes/register');
 const newPostRouter = require('./routes/newPost');
+const getPostsRouter = require('./routes/getPosts');
 
 const port = process.env.PORT || 5000;
 
@@ -22,3 +23,4 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
 app.use('/newpost', newPostRouter);
+app.use('/getPosts', getPostsRouter);

@@ -13,8 +13,15 @@ const homePage = (props) => {
     name = props.location.name;
     localStorage.setItem('user_name', name);
   }
-  const { state, togglePostModal } = useHomePage(name);
+  const { state, togglePostModal, posts } = useHomePage(name);
   const existingTokens = useAuth();
+  // const postsArray = [];
+  console.log(posts);
+  // for (let index in posts) {
+  //   let post = posts[index];
+  //   console.log(post._id);
+  // }
+  posts.map((post) => console.log(post));
   console.log('Home Page rendered');
   return (
     <Auxillary>
@@ -25,7 +32,10 @@ const homePage = (props) => {
             togglePostModal={togglePostModal}
             name={state.name}
           />
-          <Post name={state.name} />
+          {posts.map((post) => (
+            <Post name={state.name} key={post._id} {...post} />
+          ))}
+          {/* <Post name={state.name} /> */}
         </div>
       </PageLayout>
     </Auxillary>

@@ -8,6 +8,10 @@ import usePostModal from '../../../Hooks/PostModalHook';
 const postModal = (props) => {
   const redirectToHome = () => {
     props.closePostModal();
+    // props.history.push({
+    //   pathname: '/home',
+    //   name: name,
+    // });
   };
   const {
     mistake,
