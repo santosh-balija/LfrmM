@@ -39,6 +39,12 @@ const UserSchema = new mongoose.Schema({
       ref: 'Interests',
     },
   ],
+  followers: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+    },
+  ],
 });
 
 UserSchema.methods.generateAuthToken = function () {

@@ -14,15 +14,14 @@ const homePage = (props) => {
     localStorage.setItem('user_name', name);
   }
   const { state, togglePostModal, posts } = useHomePage(name);
-  const existingTokens = useAuth();
   // const postsArray = [];
-  console.log(posts);
+  // console.log(posts);
   // for (let index in posts) {
   //   let post = posts[index];
   //   console.log(post._id);
   // }
-  posts.map((post) => console.log(post));
-  console.log('Home Page rendered');
+  // posts.map((post) => console.log(post));
+  // console.log('Home Page rendered');
   return (
     <Auxillary>
       <PageLayout {...props}>

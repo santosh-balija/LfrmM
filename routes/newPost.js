@@ -10,6 +10,7 @@ router.post('/', authentication, async (req, res) => {
     user: user_id,
     mistake: req.body.mistake,
     learning: req.body.learning,
+    date: Date.now(),
   });
   newPost = await newPost.save();
   res.send({ success: true });

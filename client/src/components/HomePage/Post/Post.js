@@ -8,8 +8,12 @@ import LfrmM from './LfrmM/LfrmM';
 import ReactionsCount from './ReactionsCount/ReactionsCount';
 import Reactions from './Reactions/Reactions';
 
+import usePost from '../../../Hooks/PostHook';
+
 const post = (props) => {
-  console.log(props);
+  // console.log(props);
+  const { Learned, learnedClicked } = usePost(props);
+  // console.log(Learned.count);
   return (
     <Auxiliary>
       <div className={classes.userPosts}>
@@ -22,11 +26,11 @@ const post = (props) => {
         <LfrmM name='#Mistake' description={props.mistake} />
         <LfrmM name='#Learning' description={props.learning} />
         <ReactionsCount
-          Learned={props.Learned}
+          Learned={Learned.count}
           Appreciate={props.Appreciate}
           Share={props.Share}
         />
-        <Reactions {...props} />
+        <Reactions {...props} learnedClicked={learnedClicked} />
       </div>
     </Auxiliary>
   );
