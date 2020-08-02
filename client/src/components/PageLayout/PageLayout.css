@@ -42,12 +42,15 @@
   display: flex;
   flex-direction: column;
   border: 1px solid #eee;
+  text-align: center;
 }
 
 .sideMenu {
   font-weight: bold;
   padding: 2%;
   text-decoration: none;
+  color: black;
+  margin-top: 5%;
 }
 
 .right {

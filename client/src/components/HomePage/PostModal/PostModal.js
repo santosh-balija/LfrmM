@@ -6,22 +6,18 @@ import ContentEditable from 'react-contenteditable';
 import usePostModal from '../../../Hooks/PostModalHook';
 
 const postModal = (props) => {
-  const redirectToHome = () => {
-    props.closePostModal();
-    // props.history.push({
-    //   pathname: '/home',
-    //   name: name,
-    // });
+  const redirectToHome = (mistake, learning) => {
+    // console.log(mistake, learning);
+    props.newPostSubmitHandler(mistake, learning);
   };
   const {
     mistake,
     learning,
+    mistakeRef,
     mistakeChangeHandler,
     learningChangeHandler,
     newPostSubmitHandler,
-    mistakeRef,
   } = usePostModal(redirectToHome);
-
   return (
     <Modal show={props.showPostModal}>
       <h2 className={classes.heading}>

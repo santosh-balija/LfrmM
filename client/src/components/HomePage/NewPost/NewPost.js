@@ -21,6 +21,7 @@ const newPost = (props) => {
       </div>
       {props.showPostModal ? (
         <PostModal
+          newPostSubmitHandler={props.newPostSubmitHandler}
           showPostModal={props.showPostModal}
           closePostModal={props.togglePostModal}
         />

@@ -16,12 +16,13 @@ const reactionsCount = (props) => {
       <span className={classes.postReactionsCount}>
         {props.Appreciate} &#128079;
       </span>
-      <span className={classes.postReactionsCount}>
-        {props.Share}{' '}
+      {/* <span className={classes.postReactionsCount}>
+        {props.shareCount}{' '}
         <FontAwesomeIcon icon={faShare} color='rgb(244,200,7)' size='xs' />
-      </span>
+      </span> */}
       <span className={classes.postReactionsCount}>
-        5 <FontAwesomeIcon icon={faCommentAlt} color='gray' size='xs' />
+        {props.Comments}{' '}
+        <FontAwesomeIcon icon={faCommentAlt} color='gray' size='xs' />
       </span>
     </div>
   );

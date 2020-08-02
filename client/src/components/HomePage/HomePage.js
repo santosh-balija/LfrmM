@@ -13,7 +13,10 @@ const homePage = (props) => {
     name = props.location.name;
     localStorage.setItem('user_name', name);
   }
-  const { state, togglePostModal, posts } = useHomePage(name);
+
+  const { state, togglePostModal, posts, newPostSubmitHandler } = useHomePage(
+    name
+  );
   // const postsArray = [];
   // console.log(posts);
   // for (let index in posts) {
@@ -27,12 +30,13 @@ const homePage = (props) => {
       <PageLayout {...props}>
         <div className={classes.body}>
           <NewPost
+            newPostSubmitHandler={newPostSubmitHandler}
             showPostModal={state.showPostModal}
             togglePostModal={togglePostModal}
             name={state.name}
           />
           {posts.map((post) => (
-            <Post name={state.name} key={post._id} {...post} />
+            <Post name={state.name} key={post.postId} {...post} />
           ))}
           {/* <Post name={state.name} /> */}
         </div>

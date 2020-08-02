@@ -21,20 +21,7 @@ const usePostModal = (redirectToHome) => {
   // When the user posts the new post
   const newPostSubmitHandler = async (event) => {
     event.preventDefault();
-    let data = {
-      mistake: mistake.current,
-      learning: learning.current,
-    };
-    try {
-      // Store the new post in the database
-      const res = await axios.post('/newpost', data);
-      // If the post is saved successfully
-      if (res.data.success) {
-        redirectToHome();
-      }
-    } catch (err) {
-      console.error(err);
-    }
+    redirectToHome(mistake.current, learning.current);
   };
   return {
     mistake,

@@ -5,7 +5,27 @@
 .postReactionsBtns {
   background: none;
   border: none;
-  margin-bottom: 1%;
+  padding-bottom: 1%;
+  padding-top: 1%;
   font-size: 13px;
   color: gray;
+  outline: none;
+  cursor: pointer;
+}
+.postReactionsBtnsClicked {
+  background: none;
+  border: none;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  font-size: 13px;
+  color: rgb(60, 154, 84);
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+.postReactionsBtnsClicked:hover {
+  background-color: #eee;
+}
+.postReactionsBtns:hover {
+  background-color: #eee;
 }
