@@ -12,7 +12,7 @@ import {
 import useReactions from '../../../../Hooks/ReactionsHook';
 
 const reactions = (props) => {
-  console.log(props);
+  // console.log(props);
   const {
     Learned,
     learnedClicked,

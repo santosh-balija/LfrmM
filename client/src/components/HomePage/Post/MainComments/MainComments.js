@@ -1,80 +1,34 @@
-import React, { Component } from 'react';
+import React, { useRef, useState } from 'react';
 import classes from './MainComments.css';
 import defaultProfilePic from '../../../../assets/images/defaultProfilePic.png';
 import NewComment from './../NewComment/NewComment';
-import ReplyToOtherComment from './ReplyToOtherComment';
+import SubComments from './../SubComments/SubComments';
 
-const MainComments = () => {
-  // state = {
-  //   show: false,
-  //   subComments: this.props.mainCommentData.subComments,
-  //   postId: this.props.postIdProp,
-  // };
+const MainComments = (props) => {
+  const subComment = useRef('');
+  const [show, setShow] = useState(false);
+  const [postId, setPostId] = useState(props.postIdProp);
+  const replyCommentHandler = (event) => {
+    setShow(true);
+  };
+  const commentChangeHandlerForMain = (event) => {
+    subComment.current = event.target.value;
+  };
 
-  // replyCommentHandler = (event) => {
-  //   this.setState({ show: true });
-  // };
-
-  // componentDidMount() {
-  //   document
-  //     .getElementById('post_' + this.state.postId + '_commentDivId')
-  //     .focus();
-  // }
-
-  // postCommentHandler = (event) => {
-  //   console.log('In Post Comment Handler In OtherComments');
-  //   var id =
-  //     'post_' +
-  //     this.state.postId +
-  //     'comment_' +
-  //     this.props.mainCommentData.commentId;
-  //   var commentText = document.getElementById(id).innerText;
-  //   console.log(commentText);
-  //   var newComment = {
-  //     commentId: 53,
-  //     profileName: 'PNameSub',
-  //     designation: 'DesigSub',
-  //     institute: 'InstSub',
-  //     comment: commentText,
-  //   };
-  //   this.setState({
-  //     show: false, //after posting the comment, turn the display off
-  //   });
-  //   console.log(this.props.indexNum);
-  //   this.props.parentCallBack(newComment, this.props.indexNum);
-  // };
-
-  // render() {
-  //   var subCommentIndexId = 0;
-  //   console.log(this.state.subComments);
-  //   var replyToMainComment = null;
-  //   if (this.state.show) {
-  //     replyToMainComment = (
-  //       <div className={classes.replyCommentParentDiv}>
-  //         <div className={classes.replyCommentDiv}>
-  //           <img src={defaultProfilePic} className={classes.profileImage} />
-  //           <div
-  //             id={
-  //               'post_' +
-  //               this.state.postId +
-  //               'comment_' +
-  //               this.props.mainCommentData.commentId
-  //             }
-  //             contentEditable='true'
-  //             className={classes.placeCommentDiv2}
-  //             placeholder='Add a comment...'
-  //           ></div>
-  //         </div>
-  //         <button
-  //           className={classes.postCommentBtn}
-  //           onClick={this.postCommentHandler}
-  //         >
-  //           Post
-  //         </button>
-  //       </div>
-  //     );
-  //   }
-
+  const replyToMainComment = (event) => {
+    console.log('In Main Comment');
+    const commentText = subComment.current;
+    console.log(commentText);
+    const newComment = {
+      commentId: 53,
+      profileName: 'PNameSub',
+      designation: 'DesigSub',
+      institute: 'InstSub',
+      comment: commentText,
+    };
+    setShow(false);
+    props.replyToMainComment(newComment, props.indexOfMainComment);
+  };
   return (
     <div style={{ marginTop: '15px', marginBottom: '15px' }}>
       <div className={classes.commentDiv}>
@@ -116,21 +70,26 @@ const MainComments = () => {
       </div>
       <div className={classes.replyBtnCommentDiv}>
         <button
-          value={this.props.mainCommentData.commentId}
           className={classes.replyCommentBtn}
-          onClick={this.replyCommentHandler}
+          onClick={replyCommentHandler}
         >
           Reply
         </button>
-        {<NewComment />}
+        {show ? (
+          <NewComment
+            replyComment={true}
+            appendNewComment={replyToMainComment}
+            commentChangeHandler={commentChangeHandlerForMain}
+            newComment={subComment.current}
+          />
+        ) : null}
       </div>
-      {this.props.mainCommentData.subComments.map((eachSubComment) => (
-        <ReplyToOtherComment
-          replyToOtherCommentData={eachSubComment}
-          subIndexNum={subCommentIndexId++}
-          callback={this.props.parentCallBackToReplyToOtherComments}
-          mainIndexNum={this.props.indexNum}
-          mainCommentId={this.props.mainCommentData.commentId}
+      {props.mainCommentData.subComments.map((eachSubComment, index) => (
+        <SubComments
+          subCommentData={eachSubComment}
+          mainCommentIndex={props.indexOfMainComment}
+          subCommentIndex={index}
+          replyToSubComment={props.replyToSubComment}
         />
       ))}
     </div>

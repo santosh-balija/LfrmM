@@ -34,9 +34,9 @@ const useHomePage = (name) => {
       loadMoreComments: false,
       mainComments: [],
     };
-    console.log(posts);
+
     const prevPosts = [...posts];
-    console.log(prevPosts);
+    // console.log(prevPosts);
     prevPosts.splice(0, 0, post);
     setPosts([...prevPosts]);
 
@@ -74,7 +74,7 @@ const useHomePage = (name) => {
   // Function to make the newPost Modal toggle
 
   const togglePostModal = () => {
-    console.log('HELLO');
+    // console.log('HELLO');
     // event.preventDefault();
     // event.stopPropagation();
     const prev = { ...state };

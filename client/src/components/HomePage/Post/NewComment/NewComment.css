@@ -2,6 +2,12 @@
   display: flex;
   margin-bottom: 2%;
 }
+.replyCommentDiv {
+  display: flex;
+  flex-direction: row;
+  margin-left: 7%;
+}
+
 .profileImage {
   border-radius: 50%;
   width: 35px;

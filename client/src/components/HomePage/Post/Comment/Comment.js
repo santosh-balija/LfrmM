@@ -1,6 +1,6 @@
 import React from 'react';
 import Auxiliary from '../../../../hoc/Auxillary';
-import OtherComments from '../MainComments/MainComments';
+import MainComments from '../MainComments/MainComments';
 import NewComment from './../NewComment/NewComment';
 
 import useComment from '../../../../Hooks/CommentHook';
@@ -12,20 +12,24 @@ const comment = (props) => {
     newComment,
     commentChangeHandler,
     appendNewComment,
+    replyToMainComment,
+    replyToSubComment,
   } = useComment(props);
   return props.show ? (
     <Auxiliary>
       <NewComment
+        replyComment={false}
+        newComment={newComment.current}
         commentChangeHandler={commentChangeHandler}
         appendNewComment={appendNewComment}
       />
       {Comments.map((eachMainComment, index) => (
-        <OtherComments
+        <MainComments
           mainCommentData={eachMainComment}
           postIdProp={postId}
-          replyToMainComment={() => replyToMainComment(index)}
-          indexNum={mainCommentindexId++}
-          replyToSubComments={replyToSubComments}
+          indexOfMainComment={index}
+          replyToMainComment={replyToMainComment}
+          replyToSubComment={replyToSubComment}
         />
       ))}
     </Auxiliary>

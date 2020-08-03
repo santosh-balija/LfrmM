@@ -1,17 +1,22 @@
 import React from 'react';
+import classes from './NewComment.css';
 import Auxiliary from '../../../../hoc/Auxillary';
 import defaultProfilePic from '../../../../assets/images/defaultProfilePic.png';
 import ContentEditable from 'react-contenteditable';
 
-const newComment = () => {
+const newComment = (props) => {
   return (
     <Auxiliary>
-      <div className={classes.commentDiv}>
+      <div
+        className={
+          props.replyComment ? classes.replyCommentDiv : classes.commentDiv
+        }
+      >
         <img src={defaultProfilePic} className={classes.profileImage} />
         <ContentEditable
           className={classes.placeCommentDiv}
-          html={newComment.current}
-          onChange={commentChangeHandler}
+          html={props.newComment}
+          onChange={props.commentChangeHandler}
           placeholder='Add a comment...'
         />
       </div>
