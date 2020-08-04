@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
+autoIncrement = require('mongoose-auto-increment');
 const jwt = require('jsonwebtoken');
-
+// The schema for the user
 const UserSchema = new mongoose.Schema({
   email: {
     type: String,
@@ -33,15 +34,25 @@ const UserSchema = new mongoose.Schema({
     trim: true,
     maxlength: 25,
   },
+  designation: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  institute: {
+    type: String,
+    required: true,
+    trim: true,
+  },
   interests: [
     {
-      type: Number,
+      type: mongoose.Schema.Types.Number,
       ref: 'Interests',
     },
   ],
   followers: [
     {
-      type: mongoose.Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.Number,
       ref: 'User',
     },
   ],
@@ -54,6 +65,7 @@ UserSchema.methods.generateAuthToken = function () {
   );
   return token;
 };
+UserSchema.plugin(autoIncrement.plugin, 'User');
 const User = mongoose.model('User', UserSchema);
 
 exports.User = User;
