@@ -9,20 +9,24 @@ import { Route, Switch } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
 class App extends Component {
+  // To the existing cookie if exists
   state = {
     existingCookie: Cookies.get('Lfrm-jwt-token'),
   };
   render() {
-    // const existingToken = Cookies.get('Lfrm-jwt-token');
-    // this.setState({ existingCookie: existingToken });
+    // Function to set the cookie when the user logins or registered for the first time
     const setCookie = (token) => {
       const currentCookie = Cookies.set('Lfrm-jwt-token', token);
       this.setState({ existingCookie: currentCookie });
     };
+
     // console.log(this.state.existingCookie);
+
     return (
       <div>
         <Layout>
+          {/* Using Provider we are passing the existing Cookie and setCookie reference to the Context AuthContext */}
+          {/* We can acess the latest info of tokens from the AuthContext */}
           <AuthContext.Provider
             value={{
               existingCookie: this.state.existingCookie,

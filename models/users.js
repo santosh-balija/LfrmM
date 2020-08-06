@@ -46,7 +46,7 @@ const UserSchema = new mongoose.Schema({
   },
   interests: [
     {
-      type: mongoose.Schema.Types.Number,
+      type: Number,
       ref: 'Interests',
     },
   ],

@@ -7,9 +7,12 @@ import CarouselComp from './Carousel';
 import Modal from '../UI/Modal/Modal';
 
 import TextInput from '../Forms/TextInput/TextInput';
+import { useAuth } from './../Context/Auth';
 import useTextInput from '../../Hooks/LoginHook';
 
 const loginPage = (props) => {
+  const { existingCookie } = useAuth();
+  console.log(existingCookie);
   // Function which is called if the user is new
   const redirectToRegister = () => {
     props.history.push({
@@ -26,6 +29,10 @@ const loginPage = (props) => {
       name: name,
     });
   };
+  if (existingCookie !== undefined) {
+    console.log(existingCookie);
+    redirectToHome();
+  }
   const { state, changeHandler, handleSubmit } = useTextInput(
     redirectToRegister,
     redirectToHome

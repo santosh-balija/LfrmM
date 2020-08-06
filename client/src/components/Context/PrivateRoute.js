@@ -4,7 +4,7 @@ import { Route, Redirect } from 'react-router-dom';
 
 const privateRoute = ({ component: Component, ...rest }) => {
   const { existingCookie } = useAuth();
-  // console.log(existingCookie);
+  console.log(existingCookie);
   let render_component;
   if (existingCookie) {
     render_component = <Component {...rest} />;

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 autoIncrement = require('mongoose-auto-increment');
 
 mongoose
-  .connect('mongodb://localhost/LfrmM', { useNewUrlParser: true })
+  .connect('mongodb://localhost/LfrmM', { useFindAndModify: false })
   .then(() => {
     console.log('connected to database');
   })

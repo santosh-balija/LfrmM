@@ -5,9 +5,11 @@ import classes from './Register.css';
 import TextInput from '../Forms/TextInput/TextInput';
 import useRegister from './../../Hooks/RegisterHook';
 import InterestButton from './../Interests/InterestButton/InterestButton';
+import { Link } from 'react-router-dom';
 
 const RegisterPage = (props) => {
   let data;
+  // To display the information the user has given in the login page, if he is a new user
   if (props.location.email) {
     data = {
       email: props.location.email,
@@ -19,19 +21,25 @@ const RegisterPage = (props) => {
       password: '',
     };
   }
-  console.log(data);
-  const registerHandler = async () => {};
+
+  // Callback function which is called if the user is successfully registered
+  const redirectToHome = (name) => {
+    console.log('Pushing Home Page on the stack');
+    props.history.push({
+      pathname: '/home',
+      name: name,
+    });
+  };
 
   const {
     state,
     changeHandler,
     InterestChangeHandler,
     registerClickHandler,
-  } = useRegister(registerHandler, data);
+  } = useRegister(redirectToHome, data);
 
-  console.log(state);
+  // Array to store the form values in state
   const formElementsArray = [];
-  const interestsArray = [];
   for (let key in state) {
     if (key == 'error') {
       continue;
@@ -42,13 +50,6 @@ const RegisterPage = (props) => {
         name: key,
         properties: state[key],
       });
-    } else {
-      for (let k in state[key]) {
-        interestsArray.push({
-          name: state[key][k].name,
-          selected: state[key][k].selected,
-        });
-      }
     }
   }
 
@@ -60,13 +61,12 @@ const RegisterPage = (props) => {
           <span className={classes.greenFont}>Learn</span>
         </h2>
         <form onSubmit={registerClickHandler}>
-          {/* <div></div> */}
           <div className={classes.namesDiv}>
             {formElementsArray.map((formElement) => (
               <div key={formElement.id} style={{ display: 'block' }}>
+                {/* Component to display the form elements  */}
                 <TextInput
                   kind='register'
-                  // key={formElement.id}
                   type={formElement.properties.type}
                   name={formElement.name}
                   placeholder={formElement.properties.placeholder}
@@ -89,17 +89,18 @@ const RegisterPage = (props) => {
           <h2 style={{ textAlign: 'center' }}>
             <span className={classes.yellowFont2}>Interests</span>
           </h2>
-          {interestsArray.map((interest, index) => (
+          {state.interestes.map((interest, index) => (
+            // Component to display the interests
             <InterestButton
-              name={interest.name}
+              name={interest.interest_name}
               key={index}
               select={interest.selected}
-              onClicked={InterestChangeHandler}
+              onClicked={(event) => InterestChangeHandler(event, index)}
             />
           ))}
-          <a className={classes.anchorTag} href='/'>
+          <Link to='/' className={classes.anchorTag}>
             &#8810; back to login
-          </a>
+          </Link>
           <button
             className={classes.registerBtn}
             onClick={this.registerButtonHandler}
